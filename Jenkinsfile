@@ -1,7 +1,5 @@
 pipeline {
-    agent { 
-        label 'node'
-    }
+    agent any 
     tools {
         nodejs 'npm'
     }
@@ -13,7 +11,8 @@ pipeline {
         stage('clone') {
             steps {
                 echo 'Hello World'
-                git branch: 'main', url: 'https://github.com/mantu0tech/weather_app_node_js.git'
+                git branch: 'main', url: ' https://github.com/nageshpachpande02-dev/demo2888.git'
+'
             }
         }
          stage('build') {
@@ -22,10 +21,10 @@ pipeline {
                 sh 'npm i'
             }
         }
-         stage('deplyo') {
+         stage('building the artifact') {
             steps {
                 echo 'Hello World'
-                sh 'npm start'
+                sh 'npm run build'
             }
         }
     }
